@@ -1,1 +1,121 @@
-HELLOOOO
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://www.w3schools.com/w3css/tryw3css_templates_start_page.htm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
+<title>Memes</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./W3.CSS Template_files/w3.css">
+<link rel="stylesheet" href="./W3.CSS Template_files/css">
+<link rel="stylesheet" href="./W3.CSS Template_files/css(1)">
+<link rel="stylesheet" href="./W3.CSS Template_files/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+.icon{width: 500px;}
+</style>
+<body>
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">MEMES</h1>
+  <div class="cat-fact" id="cat-fact"></div>
+  <button onclick="getMeme()">Get Another meme</button>
+  <div>
+      <div>
+          <img
+            class="Meme"
+            id="Meme"
+            src=""
+            alt="Random Meme"
+            style="max-width: 100%; height: auto; margin-top: 20px"
+          />
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Expanding Brain</h1>
+      <img class="icon" src="https://i0.wp.com/static.stacker.com/s3fs-public/styles/1280x720/s3/2019-03/Screen%20Shot%202019-03-14%20at%2011.26.21%20AM.png?ssl=1">
+      <h5 class="w3-padding-32">In 2017, when a number of posters on Tumblr and 4chan started bragging about their brain sizes, it quickly turned into a meme. Photos of different sized brains are paired with “smart” sounding words until they expand into a fully enlightened stage. One of the first manifestations of the “expanding brain” meme came from the who-whom-whomst progression of words that seemingly makes one sound smarter..</h5>
+      <h1>Change My Mind</h1>
+      <img class="icon" src="https://i0.wp.com/static.stacker.com/s3fs-public/styles/1280x720/s3/2019-03/Screen%20Shot%202019-03-14%20at%2010.53.38%20AM.png?ssl=1">
+      <p class="w3-twothird">After Steven Crowder, a conservative podcaster, posted a photo of himself in 2018 sitting at a desk with a sign saying “Male privilege is a myth: Change my mind,” it was almost too easy for the internet to begin making fun of him with memes of their own. Memes ranged from simply changing the words on the sign to elaborate photoshops</p>
+      
+      <img class="icon" src="https://upload.wikimedia.org/wikipedia/en/9/9f/Over_9000%21.png">
+      <h1>IT'S OVER NINE THOUSAND!</h1>
+      <p>"It's Over 9000!", also known as simply "Over 9000!", is an Internet meme that became popular in 2006, involving a change made for English localizations of an episode of the Dragon Ball Z anime television series titled "The Return of Goku", which originally aired on April 19, 1997. The phrase is typically used as an innumerable quantifier to describe a large quantity of something. Variations of the phrase are also employed as a form of trolling.
+        
+      </p>
+      </div>
+    </div>
+
+    <div class="w3-third w3-center">
+      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    </div>
+
+    <div class="w3-twothird">
+      <h1>What basically are Memes?</h1>
+      <h5 class="w3-padding-32">A meme is a concept or idea that spreads virally from person to person. The most popular memes are usually found on the internet and may be images, videos, phrases, or hashtags. They often convey a humorous point of view, cultural reference, or satirical message.
+      </h5>
+
+      <p class="w3-text-grey">The term meme was introduced in 1976 by British evolutionary biologist Richard Dawkins. He conceived of memes as the cultural parallel to biological genes and considered them as being in control of their own reproduction.
+
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day: <img src="https://i.pinimg.com/736x/1d/f7/57/1df7570f7a65d51fce39fc8b7b6712fb.jpg"></h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+  
+// Used to toggle the menu on small screens when clicking on the menu button
+document.addEventListener("DOMContentLoaded", function () {
+        getMeme();
+      });
+function getMeme() {
+        const url = "https://meme-api.com/gimme";
+
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("Meme").src = data.url;
+          })
+          .catch((error) => console.error("Error fetching data:", error));
+      }
+      document.querySelector("button").addEventListener("click", function () {
+        getMeme();
+      });
+
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+</body></html>
